@@ -29,10 +29,9 @@ router.delete('/:id', async (req, res) => {
 async function loadPostsCollection() {
     try{
         const client = await mongodb.MongoClient.connect
-        ('mongodb+srv://sab:H4ZoPucssLEltCJl@mern-shopping-didkn.mongodb.net/vue_express?retryWrites=true&w=majority', {
-            useUnifiedTopology: true // {useNewUrlParser: true});
-        }); 
-        // mongodb+srv://sommysab:<password>@mern-shopping-didkn.mongodb.net/vue_express?retryWrites=true&w=majority
+        ('path/to/mongodb/uri', {
+            useUnifiedTopology: true 
+        });  
         return client.db('vue_express').collection('posts');
 
     }catch(e){
